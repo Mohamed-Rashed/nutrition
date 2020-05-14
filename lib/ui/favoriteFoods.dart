@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:nutrition/ui/findFoodRecord.dart';
 
 class FavoritFoods extends StatefulWidget {
   @override
@@ -54,7 +55,7 @@ class _FavoritFoodsState extends State<FavoritFoods> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => FavoritFoods()),
+                        MaterialPageRoute(builder: (context) => FindFoodRecord()),
                       );
                     },
                   ),
