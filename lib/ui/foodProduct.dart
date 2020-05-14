@@ -1,34 +1,29 @@
 import 'package:flutter/material.dart';
 
-import 'foodProduct.dart';
-
-class FindFoodRecord extends StatefulWidget {
+class FoodProduct extends StatefulWidget {
+  String data;
+  FoodProduct({this.data});
   @override
-  _FindFoodRecordState createState() => _FindFoodRecordState();
+  _FoodProductState createState() => _FoodProductState(data : data);
 }
 
-class _FindFoodRecordState extends State<FindFoodRecord> {
+class _FoodProductState extends State<FoodProduct> {
+  String data;
   TextEditingController _textController = TextEditingController();
 
   static List<String> mainDataList = [
-    "Apple",
-    "Apricot",
-    "Banana",
-    "Blackberry",
-    "Coconut",
-    "Date",
-    "Fig",
-    "Gooseberry",
-    "Grapes",
-    "Lemon",
-    "Litchi",
-    "Mango",
-    "Orange",
-    "Papaya",
-    "Peach",
-    "Pineapple",
-    "Pomegranate",
-    "Starfruit"
+    "Product , Cooked",
+    "Product , roasted",
+    "Product , Cooked",
+    "Product , roasted",
+    "Product , Cooked",
+    "Product , roasted",
+    "Product , Cooked",
+    "Product , roasted",
+    "Product , Cooked",
+    "Product , roasted",
+    "Product , Cooked",
+    "Product , roasted",
   ];
 
   List<String> newDataList = List.from(mainDataList);
@@ -40,26 +35,13 @@ class _FindFoodRecordState extends State<FindFoodRecord> {
           .toList();
     });
   }
-
-
-
+  _FoodProductState({this.data});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xff6200EE),
-        title: Text('Find Food Record'),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(
-              Icons.favorite,
-              color: Colors.white,
-            ),
-            onPressed: () {
-              // do something
-            },
-          )
-        ],
+        title: Text(data+' Product'),
       ),
       body: Column(
         children: <Widget>[
@@ -74,14 +56,14 @@ class _FindFoodRecordState extends State<FindFoodRecord> {
                   child: TextField(
                     controller: _textController,
                     decoration: new InputDecoration(
-                        border: new OutlineInputBorder(
-                          borderSide: new BorderSide(color: Colors.red),
-                          borderRadius: BorderRadius.all(Radius.circular(5)),
-                        ),
-                        hintText: 'Search Food Database',
-                        suffixIcon: GestureDetector(
-                          child: Icon(Icons.search),
-                        ),
+                      border: new OutlineInputBorder(
+                        borderSide: new BorderSide(color: Colors.red),
+                        borderRadius: BorderRadius.all(Radius.circular(5)),
+                      ),
+                      hintText: 'Search Food Database',
+                      suffixIcon: GestureDetector(
+                        child: Icon(Icons.search),
+                      ),
                     ),
                     onChanged: onItemChanged,
                   ),
@@ -111,12 +93,12 @@ class _FindFoodRecordState extends State<FindFoodRecord> {
                 return ListTile(
                   title: Text(data),
                   onTap: (){
-                    Navigator.push(
+                    /*Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => FoodProduct(
-                        data : data
+                          data : data
                       )),
-                    );
+                    );*/
                   },
                 );
               }).toList(),
