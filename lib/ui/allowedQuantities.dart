@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:nutrition/ui/favoriteFoods.dart';
 
 class AllowedQuantities extends StatefulWidget {
   @override
@@ -52,10 +53,10 @@ class _AllowedQuantitiesState extends State<AllowedQuantities> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Text('20',style: TextStyle(
-                            fontSize: 36,
-                            fontStyle: FontStyle.normal,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white
+                              fontSize: 36,
+                              fontStyle: FontStyle.normal,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white
                           ),),
                           Text('mg/kg/day',style: TextStyle(
                               fontSize: 16,
@@ -84,7 +85,7 @@ class _AllowedQuantitiesState extends State<AllowedQuantities> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => AllowedQuantities()),
+                        MaterialPageRoute(builder: (context) => FavoritFoods()),
                       );
                     },
                   ),
